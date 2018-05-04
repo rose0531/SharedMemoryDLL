@@ -65,10 +65,8 @@ MYSHARED_API void* ReadSharedMemorySpace(int& width, int& height) {
 	int* dim = (int*)ptrToDim;
 	dim += 1;
 	width = *dim;
-	cout << "x: " << width << endl;
 	dim += 1;
-	height = *dim;
-	cout << "y: " << height << endl;
+	height = *dim; 
 	dim = NULL;
 	UnmapPointerToSharedMemory((int*)ptrToDim);
 	void* ptrToImage = OpenFileMappingToSharedMemory(imageName, width, height);
